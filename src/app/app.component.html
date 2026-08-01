@@ -1,7 +1,11 @@
 <header class="header">
   <div class="container">
     <a class="logo" routerLink="/">
-      <span class="logo-icon">🎈</span>
+      <img
+        src="logo.jpeg"
+        alt="Prichindel Club"
+        class="logo-icon">
+
       <div class="logo-text">
         <h2>Prichindel Club</h2>
         <span>Afterschool • Lunca Cetățuii</span>
@@ -14,578 +18,526 @@
     </button>
     <nav
       [class.open]="menuOpen">
+      <a href="#misiune" (click)="closeMenu()">Misiune</a>
       <a href="#despre" (click)="closeMenu()">Despre</a>
-      <a href="#echipa" (click)="closeMenu()">Echipa</a>
-      <a href="#transport" (click)="closeMenu()">Transport</a>
+      <a href="#masa-transport" (click)="closeMenu()">Masa & Transport</a>
+      <a href="#pret" (click)="closeMenu()">Preturi</a>
       <a href="#program" (click)="closeMenu()">Program</a>
-      <a href="#teme" (click)="closeMenu()">Teme</a>
       <a href="#galerie" (click)="closeMenu()">Galerie</a>
       <a href="#contact" (click)="closeMenu()">Contact</a>
-      <a
-        routerLink="/meniu-saptamanal"
-        class="menu-button"
-        (click)="closeMenu()">
-        Meniu săptămânal
-      </a>
     </nav>
   </div>
 </header>
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-left">
-            <span class="tag">
-                AFTERSCHOOL ÎN LUNCA CETĂȚUII
-            </span>
-
+      <span class="tag">AFTERSCHOOL ÎN LUNCA CETĂȚUII</span>
       <h1>
-
         Un loc în care copiii învață,
         se joacă și cresc frumos.
-
       </h1>
 
       <p>
-
         Preluăm copiii de la școală,
         îi ajutăm la teme,
         servesc masa,
         participă la activități educative
         și se dezvoltă într-un mediu sigur și prietenos.
-
       </p>
-
       <div class="hero-buttons">
 
         <a
-          href="#contact"
+          href="https://tour.panoee.net/6a0aadce1bd5d3d18cb884d5/1"
+          target="_blank"
+          rel="noopener noreferrer"
           class="btn-primary">
-
-          Programează o vizită
-
+          Tur virtual
         </a>
-
+        <a
+          href="#contact"
+          class="btn-secondary">
+          Programează o vizită
+        </a>
         <a
           href="#program"
           class="btn-secondary">
-
           Vezi programul
-
         </a>
-
       </div>
-
     </div>
 
     <div class="hero-right">
+      <div class="hero-benefits">
+        <div class="hero-benefit-card">
+          <div class="hero-benefit-icon">
+            <lucide-icon [img]="Bus"></lucide-icon>
+          </div>
+          <h3>Transport</h3>
+          <p>
+            Preluăm copiii direct de la școală și îi însoțim în siguranță
+            până la Prichindel Club.
+          </p>
+        </div>
 
-      <div class="hero-card">
+        <div class="hero-benefit-card">
+          <div class="hero-benefit-icon">
+            <lucide-icon [img]="BookOpen"></lucide-icon>
+          </div>
 
-        <h3>
-          De ce Prichindel Club?
-        </h3>
+          <h3>Ajutor la teme</h3>
+          <p>
+            Lucrăm în grupe mici și oferim sprijin individual pentru fiecare copil.
+          </p>
+        </div>
 
-        <ul>
+        <div class="hero-benefit-card">
+          <div class="hero-benefit-icon">
+            <lucide-icon [img]="UtensilsCrossed"></lucide-icon>
+          </div>
 
-          <li>✔ Transport de la școală</li>
+          <h3>Masă inclusă</h3>
+          <p>
+            Catering autorizat, meniu echilibrat și gustare zilnică.
+          </p>
 
-          <li>✔ Ajutor la teme</li>
-
-          <li>✔ Masă caldă zilnic</li>
-
-          <li>✔ Activități recreative</li>
-
-          <li>✔ Personal calificat</li>
-
-        </ul>
-
+        </div>
+        <div class="hero-benefit-card">
+          <div class="hero-benefit-icon">
+            <lucide-icon [img]="Palette"></lucide-icon>
+          </div>
+          <h3>Activități</h3>
+          <p>
+            Ateliere creative, jocuri și activități pentru dezvoltarea copiilor.
+          </p>
+        </div>
       </div>
-
     </div>
-
   </div>
-
 </section>
 
-<section class="benefits">
-
-  <div class="container">
-
-    <div class="benefit">
-
-      <div class="icon">🚌</div>
-
-      <h3>Transport</h3>
-
-      <p>
-
-        Preluăm copiii
-        direct de la școală.
-
-      </p>
-
-    </div>
-
-    <div class="benefit">
-
-      <div class="icon">📚</div>
-
-      <h3>Teme</h3>
-
-      <p>
-
-        Lucrăm în grupe mici
-        împreună cu educatorii.
-
-      </p>
-
-    </div>
-
-    <div class="benefit">
-
-      <div class="icon">🍽️</div>
-
-      <h3>Masă</h3>
-
-      <p>
-
-        Catering autorizat
-        și meniu echilibrat.
-
-      </p>
-
-    </div>
-
-    <div class="benefit">
-
-      <div class="icon">🎨</div>
-
-      <h3>Activități</h3>
-
-      <p>
-
-        Ateliere,
-        jocuri
-        și dezvoltare personală.
-
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section
-  id="despre"
-  class="section">
-
+<section id="despre" class="section">
   <div class="container">
 
     <div class="section-title">
-
       <span>DESPRE NOI</span>
 
       <h2>
-
-        Un afterschool construit
-        din pasiune pentru copii
+        Un afterschool creat de părinți,
+        pentru copii
       </h2>
+
+      <p class="section-subtitle">
+        Prichindel Club s-a născut din dorința a doi părinți de a crea un loc sigur,
+        modern și apropiat de casă, unde copiii învață, se joacă și cresc frumos,
+        iar părinții au liniștea că sunt pe mâini bune.
+      </p>
     </div>
 
-    <div class="two-columns">
-      <div>
+    <div class="about-grid">
+      <div class="about-card">
+        <div class="about-icon">
+          <lucide-icon [img]="BookOpen"></lucide-icon>
+        </div>
+        <h3>Ajutor la teme</h3>
         <p>
-          Prichindel Club oferă un mediu sigur,
-          modern și prietenos,
-          unde copiii își petrec timpul după școală.
-        </p>
-        <p>
-          Punem accent pe educație,
-          dezvoltare personală,
-          autonomie și socializare.
+          Sprijin zilnic pentru consolidarea cunoștințelor,
+          dezvoltarea autonomiei și încrederea copilului.
         </p>
       </div>
-      <div class="image-placeholder">
-        Imagine
+
+      <div class="about-card">
+        <div class="about-icon">
+          <lucide-icon [img]="ShieldCheck"></lucide-icon>
+        </div>
+        <h3>Mediu sigur</h3>
+        <p>
+          Supraveghere permanentă, grijă și un program bine organizat
+          după terminarea cursurilor.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-icon">
+          <lucide-icon [img]="MessagesSquare"></lucide-icon>
+        </div>
+        <h3>Comunicare cu părinții</h3>
+        <p>
+          Feedback constant și colaborare pentru progresul
+          și dezvoltarea fiecărui copil.
+        </p>
+
+      </div>
+      <div class="about-card">
+        <div class="about-icon">
+          <lucide-icon [img]="Sprout"></lucide-icon>
+        </div>
+        <h3>Impact în comunitate</h3>
+        <p>
+          O întreprindere socială care reinvestește în educație
+          și sprijină copiii din comunitatea locală.
+        </p>
+
       </div>
     </div>
   </div>
-</section>
 
-<section
-  id="echipa"
-  class="section gray">
-  <div class="container">
-    <div class="section-title">
-      <span>ECHIPA</span>
-      <h2>
-        Oameni dedicați educației
-      </h2>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <div class="avatar"></div>
-        <h3>Educator</h3>
-        <p>
-          Sprijin permanent
-          pentru teme
-          și activități.
-        </p>
-      </div>
-      <div class="card">
-        <div class="avatar"></div>
-        <h3>Coordonator</h3>
-        <p>
-          Organizare,
-          comunicare
-          și relația cu părinții.
-        </p>
-      </div>
-      <div class="card">
-        <div class="avatar"></div>
-        <h3>Psiholog</h3>
-        <p>
-          Susținerea dezvoltării emoționale.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<section
-  id="transport"
-  class="section">
+  <br>
+  <br>
 
   <div class="container">
-
     <div class="section-title">
-
-      <span>TRANSPORT</span>
-
-      <h2>
-
-        Îi aducem în siguranță de la școală
-
-      </h2>
-
+      <h2>Echipa Prichindel Club</h2>
+      <p class="section-subtitle">
+        La Prichindel Club, fiecare zi vine cu zâmbete, povești și lucruri noi de
+        descoperit. Echipa noastră este alături de copii cu răbdare, grijă și
+        multă voie bună, pentru ca fiecare prichindel să se simtă în siguranță și
+        ca într-o a doua familie.
+      </p>
     </div>
 
-    <div class="transport-grid">
-
-      <div class="transport-text">
-
-        <p>
-
-          Copiii sunt preluați direct de la școală
-          și transportați în siguranță către
-          Prichindel Club.
-
-        </p>
-
-        <ul>
-
-          <li>✔ Șofer autorizat</li>
-
-          <li>✔ Microbuz verificat tehnic</li>
-
-          <li>✔ Trasee organizate</li>
-
-          <li>✔ Comunicare permanentă cu părinții</li>
-
-        </ul>
-
-      </div>
-
-      <div class="transport-image">
-
-        <div class="image-placeholder">
-
-          Transport
-
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-icon">
+          <lucide-icon [img]="GraduationCap"></lucide-icon>
         </div>
 
+        <h3>Doamna învățătoare</h3>
+
+        <span class="team-role">
+          Cadrul didactic
+        </span>
+
+        <p>
+          Îi ajută pe copii să descopere că temele pot deveni mai ușoare atunci
+          când sunt explicate cu răbdare și pe înțelesul lor.
+        </p>
+
+        <ul>
+          <li>Sprijin la teme</li>
+          <li>Explicații adaptate fiecărui copil</li>
+          <li>Jocuri educative și lectură</li>
+          <li>Activități creative</li>
+        </ul>
+
       </div>
 
+      <div class="team-card featured">
+        <div class="team-icon">
+          <lucide-icon [img]="HeartHandshake"></lucide-icon>
+        </div>
+        <h3>Prietenul celor mici</h3>
+        <span class="team-role">
+          Supraveghetor
+        </span>
+        <p>
+          Este alături de copii pe parcursul întregii zile și contribuie la o
+          atmosferă veselă, sigură și prietenoasă.
+        </p>
+
+        <ul>
+          <li>Supraveghere permanentă</li>
+          <li>Sprijin în timpul activităților</li>
+          <li>Integrarea copiilor în grup</li>
+          <li>Joacă și momente de relaxare</li>
+        </ul>
+
+      </div>
+
+      <div class="team-card">
+
+        <div class="team-icon">
+          <lucide-icon [img]="BriefcaseBusiness"></lucide-icon>
+        </div>
+
+        <h3>Omul care face lucrurile să meargă</h3>
+
+        <span class="team-role">
+          Administrator
+        </span>
+
+        <p>
+          Coordonează activitatea clubului și se asigură că fiecare zi este bine
+          organizată pentru copii și părinți.
+        </p>
+
+        <ul>
+          <li>Înscrieri și programări</li>
+          <li>Comunicarea cu părinții</li>
+          <li>Organizarea activităților</li>
+          <li>Un spațiu sigur și primitor</li>
+        </ul>
+
+      </div>
     </div>
-
   </div>
-
 </section>
 
-<section
-  id="program"
-  class="section gray">
-
+<section id="masa-transport" class="section gray">
   <div class="container">
-
     <div class="section-title">
+      <span>MASĂ & TRANSPORT</span>
+      <h2>Tot ce au nevoie pentru o zi liniștită</h2>
+      <p class="section-subtitle">
+        Ne ocupăm atât de alimentația copiilor, cât și de deplasarea lor în
+        siguranță, pentru ca părinții să aibă liniștea că cei mici sunt pe mâini bune.
+      </p>
+    </div>
 
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <lucide-icon [img]="UtensilsCrossed"></lucide-icon>
+        </div>
+
+        <h3>Masă gustoasă</h3>
+        <p>
+          Masa copiilor este asigurată de o firmă de catering autorizată,
+          respectând toate normele de igienă și siguranță alimentară.
+        </p>
+
+        <ul>
+          <li>Meniu diversificat și echilibrat</li>
+          <li>Felul I și felul II</li>
+          <li>Gustare zilnică</li>
+          <li>Preparat special pentru copii</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <lucide-icon [img]="Footprints"></lucide-icon>
+        </div>
+        <h3>Drumul spre Prichindel Club</h3>
+        <p>
+          Copiii sunt preluați de la Liceul Teoretic
+          <strong>„Comandor Alexandru Cătuneanu”</strong>,
+          corpurile A, B și C și ajung împreună cu însoțitorul nostru
+          la Prichindel Club.
+        </p>
+        <ul>
+          <li>Preluare de la corpurile A, B și C</li>
+          <li>Însoțitor pe tot traseul</li>
+          <li>Maximum 10 minute până la club</li>
+          <li>Ritm adaptat copiilor și deplasare în siguranță</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="program" class="section gray">
+  <div class="container">
+    <div class="section-title">
       <span>PROGRAM</span>
+      <h2>O zi la Prichindel Club</h2>
 
-      <h2>
+      <p class="section-subtitle">
+        Programul se desfășoară de <strong>luni până vineri</strong>, între
+        <strong>10:30 și 17:00</strong>, fiind conceput pentru a oferi copiilor
+        un echilibru între învățare, relaxare și dezvoltare personală.
+      </p>
+    </div>
 
-        Program flexibil pentru părinți
+    <div class="program-grid">
+      <div class="program-card">
+        <div class="program-icon">
+          <lucide-icon [img]="Bus"></lucide-icon>
+        </div>
 
-      </h2>
+        <span class="program-time">10:30</span>
+
+        <h3>Preluarea copiilor</h3>
+        <p>
+          Copiii sunt preluați de la școală și ajung în siguranță la
+          Prichindel Club, unde sunt organizate grupele, schimbarea
+          hainelor și respectarea regulilor de igienă.
+        </p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">
+          <lucide-icon [img]="Utensils"></lucide-icon>
+        </div>
+
+        <span class="program-time">12:00</span>
+
+        <h3>Masa și relaxarea</h3>
+        <p>
+          Copiii servesc masa de prânz într-o atmosferă plăcută, urmată
+          de o perioadă de relaxare după programul școlar.
+        </p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">
+          <lucide-icon [img]="BookOpen"></lucide-icon>
+        </div>
+
+        <span class="program-time">13:00</span>
+
+        <h3>Teme și învățare</h3>
+
+        <p>
+          Temele sunt realizate cu sprijinul îndrumătorilor, iar
+          cunoștințele sunt consolidate prin activități și exerciții
+          adaptate fiecărui copil.
+        </p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">
+          <lucide-icon [img]="Apple"></lucide-icon>
+        </div>
+
+        <span class="program-time">15:00</span>
+
+        <h3>Gustare și jocuri</h3>
+
+        <p>
+          După gustare urmează jocuri interactive, jocuri de societate
+          și activități desfășurate în echipă.
+        </p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">
+          <lucide-icon [img]="Palette"></lucide-icon>
+        </div>
+
+        <span class="program-time">16:00</span>
+
+        <h3>Ateliere și activități creative</h3>
+
+        <p>
+          Ateliere educative, activități creative, filme educative și
+          timp pentru joacă liberă într-un mediu sigur și prietenos.
+        </p>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">
+          <lucide-icon [img]="House"></lucide-icon>
+        </div>
+
+        <span class="program-time">17:00</span>
+
+        <h3>Plecarea acasă</h3>
+
+        <p>
+          La finalul programului, copiii sunt preluați de părinți după
+          o zi echilibrată, plină de activități și experiențe frumoase.
+        </p>
+      </div>
 
     </div>
 
-    <div class="pricing-grid">
+    <div class="homework-box">
 
-      <div class="pricing-card">
-
-        <h3>
-
-          Program complet
-
-        </h3>
-
-        <span class="hours">
-
-                    12:00 – 18:00
-
-                </span>
-
-        <ul>
-
-          <li>Transport</li>
-          <li>Masa de prânz</li>
-          <li>Teme</li>
-          <li>Activități</li>
-          <li>Gustare</li>
-
-        </ul>
-
+      <div class="homework-icon">
+        <lucide-icon [img]="BookCheck"></lucide-icon>
       </div>
 
-      <div class="pricing-card featured">
-
-                <span class="badge">
-
-                    Recomandat
-
-                </span>
-
-        <h3>
-
-          Pachet Premium
-
-        </h3>
-
-        <span class="hours">
-
-                    Tot programul
-
-                </span>
-
-        <ul>
-
-          <li>Transport inclus</li>
-          <li>2 mese</li>
-          <li>Supraveghere</li>
-          <li>Activități zilnice</li>
-          <li>Consiliere</li>
-
-        </ul>
-
+      <div>
+        <h3>Sprijin organizat pentru teme</h3>
+        <p>
+          Sprijinul la teme este organizat pe etape, cu pauze și
+          activități recreative între perioadele de concentrare,
+          astfel încât fiecare copil să poată lucra într-un ritm
+          potrivit vârstei sale.
+        </p>
       </div>
-
-      <div class="pricing-card">
-
-        <h3>
-
-          Program scurt
-
-        </h3>
-
-        <span class="hours">
-
-                    Personalizat
-
-                </span>
-
-        <ul>
-
-          <li>Flexibil</li>
-          <li>La cerere</li>
-          <li>În funcție de nevoi</li>
-
-        </ul>
-
-      </div>
-
     </div>
-
   </div>
-
 </section>
 
-<section
-  id="teme"
-  class="section">
-
+<section id="misiune" class="section">
   <div class="container">
-
     <div class="section-title">
-
-      <span>TEME</span>
-
-      <h2>
-
-        Învățăm fără stres
-
-      </h2>
-
+      <span>MISIUNEA NOASTRĂ</span>
+      <h2>Mai mult decât un afterschool</h2>
+      <p class="section-subtitle">
+        Prichindel Club s-a născut din dorința a doi părinți de a crea un loc
+        sigur, modern și apropiat de casă, unde copiii învață, se joacă și
+        cresc frumos, iar părinții au liniștea că cei mici sunt pe mâini bune.
+      </p>
     </div>
 
-    <div class="homework-grid">
+    <div class="mission-wrapper">
+      <div class="mission-block">
+        <div class="mission-icon">
+          <lucide-icon [img]="Heart"></lucide-icon>
+        </div>
 
-      <div class="homework-card">
-
-        <h3>
-
-          Grupe mici
-
-        </h3>
-
-        <p>
-
-          Fiecare copil primește atenția
-          de care are nevoie.
-
-        </p>
-
+        <div class="mission-content">
+          <h3>Totul a început din experiența de părinte</h3>
+          <p>
+            Ca părinți, știm cât de important este să ai liniștea că, după
+            terminarea orelor, copilul tău se află într-un mediu în care este
+            supravegheat, înțeles și încurajat. Din această nevoie a luat
+            naștere Prichindel Club – un spațiu dedicat elevilor din clasele
+            pregătitoare și I–IV, unde educația, joaca și dezvoltarea emoțională
+            se îmbină într-un program bine organizat.
+          </p>
+        </div>
       </div>
 
-      <div class="homework-card">
-
-        <h3>
-
-          Explicații
-
-        </h3>
-
-        <p>
-
-          Nu doar verificăm temele,
-          ci explicăm materia.
-
-        </p>
-
+      <div class="mission-block reverse">
+        <div class="mission-icon">
+          <lucide-icon [img]="ShieldCheck"></lucide-icon>
+        </div>
+        <div class="mission-content">
+          <h3>Liniște pentru părinți. Timp valoros pentru copii.</h3>
+          <p>
+            Ne propunem să reducem presiunea zilnică asupra familiilor prin
+            supraveghere atentă, sprijin la teme, mese echilibrate și activități
+            educative. În același timp, copiii sunt încurajați să devină mai
+            independenți, mai creativi și mai încrezători. Comunicarea constantă
+            cu părinții este o parte esențială din ceea ce facem.
+          </p>
+        </div>
       </div>
 
-      <div class="homework-card">
-
-        <h3>
-
-          Autonomie
-
-        </h3>
-
-        <p>
-
-          Copiii învață să devină
-          independenți.
-
-        </p>
-
+      <div class="mission-block">
+        <div class="mission-icon">
+          <lucide-icon [img]="HandHeart"></lucide-icon>
+        </div>
+        <div class="mission-content">
+          <h3>Educație cu suflet și responsabilitate socială</h3>
+          <p>
+            Prichindel Club este o întreprindere socială creată pentru a
+            contribui la dezvoltarea comunității din comuna Ciurea. O mare parte
+            din profit este reinvestită în proiecte educaționale și sociale,
+            iar misiunea noastră este să oferim acces la educație și copiilor
+            care provin din medii vulnerabile.
+          </p>
+        </div>
       </div>
 
+      <div class="mission-block reverse">
+        <div class="mission-icon">
+          <lucide-icon [img]="Users"></lucide-icon>
+        </div>
+        <div class="mission-content">
+          <h3>Creștem împreună</h3>
+          <p>
+            Ne dorim să construim împreună cu părinții, cadrele didactice și
+            comunitatea locală un loc în care fiecare copil să se simtă în
+            siguranță, apreciat și încurajat. La Prichindel Club învățăm,
+            ne jucăm și creștem împreună.
+          </p>
+        </div>
+      </div>
     </div>
-
   </div>
-
-</section>
-
-<section
-  id="meniu"
-  class="section green">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <span>MENIU</span>
-
-      <h2>
-
-        Mese sănătoase în fiecare zi
-
-      </h2>
-
-    </div>
-
-    <div class="menu-preview">
-
-      <div class="menu-card">
-
-        <h3>
-
-          Masa de prânz
-
-        </h3>
-
-        <p>
-
-          Supe,
-          fel principal,
-          desert.
-
-        </p>
-
-      </div>
-
-      <div class="menu-card">
-
-        <h3>
-
-          Gustare
-
-        </h3>
-
-        <p>
-
-          Fructe,
-          iaurt,
-          produse proaspete.
-
-        </p>
-
-      </div>
-
-    </div>
-
-    <div class="center">
-
-      <a
-        routerLink="/meniu-saptamanal"
-        class="btn-primary">
-
-        Vezi meniul săptămânal
-
-      </a>
-
-    </div>
-
-  </div>
-
 </section>
 
 <section
   id="galerie"
   class="section">
-
   <div class="container">
-
     <div class="section-title">
-
-      <span>GALERIE</span>
-
-      <h2>
-
-        O zi la Prichindel Club
-
-      </h2>
-
+      <span>O zi la Prichindel Club</span>
+      <h2>GALERIE</h2>
     </div>
 
     <div class="gallery-grid">
@@ -598,42 +550,113 @@
       <div class="gallery-item"></div>
       <div class="gallery-item"></div>
       <div class="gallery-item"></div>
+    </div>
+  </div>
+</section>
 
+<section id="pret" class="section">
+  <div class="container">
+    <div class="section-title">
+      <span>Preturi</span>
+      <h2>Alege varianta potrivită familiei tale</h2>
+
+      <p class="section-subtitle">
+        Toate variantele includ masa de prânz și sunt concepute pentru
+        a oferi flexibilitate în funcție de nevoile fiecărei familii.
+      </p>
     </div>
 
-  </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-badge">
+          Ocazional
+        </div>
+        <h3>Participare zilnică</h3>
+        <div class="price">
+          90 <span>lei / zi</span>
+        </div>
+        <ul>
+          <li>Masa inclusă</li>
+          <li>Program complet</li>
+          <li>Activități educative</li>
+          <li>Supraveghere permanentă</li>
+        </ul>
+      </div>
 
+      <div class="pricing-card featured">
+        <div class="pricing-badge">
+          Recomandat
+        </div>
+        <h3>Abonament săptămânal</h3>
+        <div class="price">
+          400 <span>lei</span>
+        </div>
+        <div class="price-info">
+          80 lei / zi
+        </div>
+
+        <ul>
+          <li>Masa inclusă</li>
+          <li>5 zile consecutive</li>
+          <li>Program complet</li>
+          <li>Toate activitățile incluse</li>
+        </ul>
+      </div>
+
+      <div class="pricing-card">
+        <div class="pricing-badge">
+          Cel mai avantajos
+        </div>
+        <h3>Abonament lunar</h3>
+        <div class="price">
+          1500 <span>lei</span>
+        </div>
+
+        <div class="price-info">
+          75 lei / zi
+        </div>
+        <ul>
+          <li>4 săptămâni consecutive</li>
+          <li>Masa inclusă</li>
+          <li>Program complet</li>
+          <li>Cea mai bună valoare</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="enroll-box">
+      <h3>Înscrieri deschise</h3>
+      <p>
+        Locurile sunt limitate. Completează formularul de înscriere și
+        te vom contacta pentru confirmarea disponibilității.
+      </p>
+      <a class="btn-primary">
+        Completează
+      </a>
+    </div>
+  </div>
 </section>
 
 <section
   id="contact"
   class="section contact">
-
   <div class="container contact-grid">
-
     <div>
-
       <div class="section-title">
-
         <span>CONTACT</span>
-
         <h2>
-
           Te așteptăm în vizită
-
         </h2>
-
       </div>
 
       <p>
-
         Programează o vizită și vino
         să vezi spațiul nostru.
       </p>
       <ul class="contact-list">
-        <li>📍 Lunca Cetățuii, Iași</li>
-        <li>📞 +40 7xx xxx xxx</li>
-        <li>✉ contact&#64;prichindelclub.ro</li>
+        <li>📍 Str. Luceafărului nr 134, Lunca Cetatuii, comuna Ciurea, jud. Iași</li>
+        <li>📞 +40 734 365 761</li>
+        <li>prichindel.club&#64;yahoo.com</li>
       </ul>
     </div>
 
