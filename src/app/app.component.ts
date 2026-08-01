@@ -20,7 +20,10 @@ import {
   Sprout,
   Users,
   Utensils,
-  UtensilsCrossed
+  UtensilsCrossed,
+  Clapperboard,
+  PartyPopper,
+  Sun
 } from 'lucide-angular';
 
 @Component({
@@ -56,6 +59,9 @@ export class AppComponent {
   readonly Heart = Heart;
   readonly HandHeart = HandHeart;
   readonly Users = Users;
+  readonly Clapperboard = Clapperboard;
+  readonly PartyPopper = PartyPopper;
+  readonly Sun = Sun;
 
   menuOpen = false;
   currentYear = new Date().getFullYear();
