@@ -23,7 +23,11 @@ import {
   UtensilsCrossed,
   Clapperboard,
   PartyPopper,
-  Sun
+  Sun,
+  BadgeCheck,
+  Facebook,
+  Instagram,
+  Wallet
 } from 'lucide-angular';
 
 @Component({
@@ -62,6 +66,10 @@ export class AppComponent {
   readonly Clapperboard = Clapperboard;
   readonly PartyPopper = PartyPopper;
   readonly Sun = Sun;
+  readonly BadgeCheck = BadgeCheck;
+  readonly Wallet = Wallet;
+  readonly Facebook = Facebook;
+  readonly Instagram = Instagram;
 
   menuOpen = false;
   currentYear = new Date().getFullYear();

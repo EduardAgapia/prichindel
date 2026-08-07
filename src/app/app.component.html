@@ -28,9 +28,34 @@
     </nav>
   </div>
 </header>
+
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-left">
+      <div class="social-links">
+        <a
+          href="https://www.facebook.com/share/1JQejLp5Fr/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook">
+          <lucide-icon [img]="Facebook"></lucide-icon>
+        </a>
+        <a
+          href="https://www.instagram.com/prichindel.club?igsh=MXB5c2VjZGVpMHpuYw%3D%3D&utm_source=qr"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram">
+          <lucide-icon [img]="Instagram"></lucide-icon>
+        </a>
+        <a
+          href="https://www.tiktok.com/@prichindel.club?_r=1&_t=ZN-98ZOkxUpDZ0"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+      <br>
       <span class="tag">AFTERSCHOOL ÎN LUNCA CETĂȚUII</span>
       <h1>
         Un loc în care copiii învață,
@@ -557,70 +582,66 @@
 <section id="pret" class="section">
   <div class="container">
     <div class="section-title">
-      <span>Preturi</span>
-      <h2>Alege varianta potrivită familiei tale</h2>
-
+      <span>TARIFE</span>
+      <h2>Program flexibil pentru fiecare familie</h2>
       <p class="section-subtitle">
-        Toate variantele includ masa de prânz și sunt concepute pentru
-        a oferi flexibilitate în funcție de nevoile fiecărei familii.
+        Toate variantele includ masa de prânz și oferă acces la întregul
+        program educațional desfășurat în cadrul Prichindel Club.
       </p>
     </div>
 
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-badge">
-          Ocazional
-        </div>
-        <h3>Participare zilnică</h3>
-        <div class="price">
-          90 <span>lei / zi</span>
+    <div class="pricing-layout">
+      <div class="pricing-benefits">
+        <div class="pricing-header">
+          <lucide-icon [img]="BadgeCheck"></lucide-icon>
+          <h3>Ce este inclus</h3>
+
         </div>
         <ul>
-          <li>Masa inclusă</li>
-          <li>Program complet</li>
-          <li>Activități educative</li>
+          <li>Transport de la școală</li>
+          <li>Masă de prânz și gustare</li>
+          <li>Ajutor la teme</li>
+          <li>Activități educative și recreative</li>
           <li>Supraveghere permanentă</li>
+          <li>Comunicare constantă cu părinții</li>
         </ul>
       </div>
 
-      <div class="pricing-card featured">
-        <div class="pricing-badge">
-          Recomandat
+      <div class="pricing-table">
+        <div class="pricing-header">
+          <lucide-icon [img]="Wallet"></lucide-icon>
+          <h3>Tarife</h3>
+
         </div>
-        <h3>Abonament săptămânal</h3>
-        <div class="price">
-          400 <span>lei</span>
-        </div>
-        <div class="price-info">
-          80 lei / zi
+        <div class="price-row">
+          <div>
+            <h4>Participare zilnică</h4>
+            <span>Ideal pentru participare ocazională</span>
+          </div>
+          <strong>90 lei / zi</strong>
         </div>
 
-        <ul>
-          <li>Masa inclusă</li>
-          <li>5 zile consecutive</li>
-          <li>Program complet</li>
-          <li>Toate activitățile incluse</li>
-        </ul>
-      </div>
-
-      <div class="pricing-card">
-        <div class="pricing-badge">
-          Cel mai avantajos
-        </div>
-        <h3>Abonament lunar</h3>
-        <div class="price">
-          1500 <span>lei</span>
+        <div class="price-row">
+          <div>
+            <h4>Abonament săptămânal</h4>
+            <span>5 zile consecutive</span>
+          </div>
+          <strong>
+            400 lei
+            <small>(80 lei / zi)</small>
+          </strong>
         </div>
 
-        <div class="price-info">
-          75 lei / zi
+        <div class="price-row">
+          <div>
+            <h4>Abonament lunar</h4>
+            <span>4 săptămâni consecutive</span>
+          </div>
+          <strong>
+            1500 lei
+            <small>(75 lei / zi)</small>
+          </strong>
         </div>
-        <ul>
-          <li>4 săptămâni consecutive</li>
-          <li>Masa inclusă</li>
-          <li>Program complet</li>
-          <li>Cea mai bună valoare</li>
-        </ul>
       </div>
     </div>
 
@@ -630,22 +651,28 @@
         Locurile sunt limitate. Completează formularul de înscriere și
         te vom contacta pentru confirmarea disponibilității.
       </p>
-      <a class="btn-primary">
-        Completează
+
+      <a
+        href="#contact"
+        class="btn-primary">
+
+        Completează formularul
       </a>
+
     </div>
   </div>
 </section>
 
 <section id="petreceri" class="section gray">
+
   <div class="container">
     <div class="section-title">
       <span>PETRECERI ANIVERSARE</span>
-      <h2>O zi de neuitat pentru copilul tău</h2>
+      <h2>Transformăm fiecare aniversare într-o experiență memorabilă</h2>
       <p class="section-subtitle">
-        La Prichindel Club transformăm fiecare aniversare într-o experiență
-        plină de zâmbete, jocuri și voie bună, într-un spațiu sigur și modern,
-        dedicat copiilor cu vârste între 3 și 12 ani.
+        Organizăm petreceri pentru copii cu vârste între 3 și 12 ani,
+        într-un spațiu modern și sigur, cu pachete flexibile și numeroase
+        opțiuni de personalizare.
       </p>
     </div>
 
@@ -654,78 +681,101 @@
         <div class="pricing-badge">
           BASIC
         </div>
-
         <h3>Pachet Basic</h3>
         <div class="price">
-          La cerere
+          1190 <span>lei</span>
         </div>
-
+        <div class="price-info">
+          10 copii • 2h 30 min
+        </div>
         <ul>
-          <li>Acces la spațiul de joacă</li>
-          <li>Muzică și jocuri</li>
-          <li>2 ore și 30 minute</li>
-          <li>Personal dedicat</li>
+          <li>Acces la sală și spațiul de joacă</li>
+          <li>Animator (jocuri, dansuri și concursuri)</li>
+          <li>Pictură pe față / tatuaje</li>
+          <li>Sonorizare și muzică</li>
+          <li>Meniu pentru copii</li>
+          <li>Invitații digitale standard</li>
         </ul>
-
       </div>
 
       <div class="pricing-card featured">
         <div class="pricing-badge">
           RECOMANDAT
         </div>
-        <h3>Pachet Plus</h3>
+        <h3>Fun &amp; Magic</h3>
         <div class="price">
-          La cerere
+          1750 <span>lei</span>
         </div>
+        <div class="price-info">
+          10 copii • 2h 30 min
+        </div>
+
         <ul>
-          <li>Animator</li>
-          <li>Jocuri și concursuri</li>
-          <li>Pictură pe față</li>
-          <li>Decor festiv</li>
-          <li>2 ore și 30 minute</li>
+          <li>Tot ce include pachetul Basic</li>
+          <li>Decor tematic personalizat</li>
+          <li>Tort inclus</li>
+          <li>Șampanie pentru copii</li>
+          <li>Mașină de baloane</li>
+          <li>Invitație digitală personalizată</li>
         </ul>
       </div>
 
       <div class="pricing-card">
         <div class="pricing-badge">
-          PREMIUM
+          SALĂ
         </div>
-        <h3>Pachet Premium</h3>
+        <h3>Închiriere sală</h3>
         <div class="price">
-          La cerere
+          800 <span>lei</span>
         </div>
-
+        <div class="price-info">
+          2h 30 min
+        </div>
         <ul>
-          <li>Decor tematic</li>
-          <li>Tort aniversar</li>
-          <li>Pinata</li>
-          <li>Fotograf profesionist</li>
-          <li>Bar cu limonadă</li>
+          <li>Acces la toate facilitățile</li>
+          <li>Asistență pe durata evenimentului</li>
+          <li>Sonorizare inclusă</li>
+          <li>Maximum 20 copii</li>
+          <li>Copii suplimentari: 25 lei/copil</li>
         </ul>
       </div>
     </div>
+
     <div class="party-box">
-      <h3>Fiecare petrecere este unică</h3>
+      <h3>Servicii opționale</h3>
       <p>
-        Pachetele pot fi personalizate în funcție de tema preferată,
-        numărul invitaților și dorințele sărbătoritului.
+        Personalizează petrecerea exact așa cum își dorește copilul tău.
+        Poți adăuga oricare dintre serviciile de mai jos.
       </p>
 
       <div class="party-features">
-        <span>🎈 Animator</span>
+        <span>🎈 Decor tematic</span>
+        <span>🎂 Tort personalizat</span>
         <span>🎨 Face Painting</span>
-        <span>🎂 Tort</span>
         <span>🎁 Pinata</span>
         <span>📸 Fotograf</span>
-        <span>🍋 Lemon Bar</span>
-        <span>🎵 Muzică</span>
-        <span>🎊 Decor tematic</span>
+        <span>🎈 Mașină de baloane</span>
+        <span>🍋 Bar cu limonadă</span>
+        <span>🥂 Șampanie pentru copii</span>
+        <span>🎵 Sonorizare</span>
+        <span>👧 Copii suplimentari</span>
+        <span>✨ Invitații personalizate</span>
       </div>
-      <a
-        href="#contact"
-        class="btn-primary">
-        Solicită o ofertă
-      </a>
+
+      <p class="party-note">
+        Oferta completă include descrierea tuturor serviciilor, opțiunilor
+        suplimentare și condițiilor generale de rezervare.
+      </p>
+
+      <div class="party-buttons">
+        <a
+          href="oferta.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary">
+          Vezi oferta completă (PDF)
+        </a>
+      </div>
     </div>
   </div>
 </section>

@@ -378,6 +378,147 @@ nav a:hover {
   line-height: 1.8;
 }
 
+.header .container {
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  margin-left: auto;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 28px;
+}
+
+.social-links a {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #30b46b;
+  border-radius: 50%;
+  background: #fff;
+  color: #30b46b;
+  text-decoration: none;
+  transition: all .3s ease;
+}
+
+.social-links a:hover {
+  background: #30b46b;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(48,180,107,.25);
+}
+
+.social-links svg,
+.social-links i {
+  width: 22px;
+  height: 22px;
+  font-size: 22px;
+}
+
+.pricing-layout {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 36px;
+  margin-top: 60px;
+}
+
+.pricing-benefits,
+.pricing-table {
+  background: white;
+  border-radius: 28px;
+  padding: 42px;
+  border: 1px solid #edf1f5;
+  box-shadow: 0 15px 40px rgba(0,0,0,.05);
+}
+
+.pricing-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.pricing-header svg {
+  width: 46px;
+  height: 46px;
+  color: #30b46b;
+}
+
+.pricing-header h3 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.pricing-benefits ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pricing-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid #edf1f5;
+  font-size: 18px;
+}
+
+.pricing-benefits li::before {
+  content: "✓";
+  color: #30b46b;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.price-row:last-child {
+  border-bottom: none;
+}
+
+.price-row h4 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.price-row span {
+  color: #6b7280;
+}
+
+.price-row strong {
+  text-align: right;
+  font-size: 34px;
+  color: #30b46b;
+}
+
+.price-row small {
+  display: block;
+  font-size: 15px;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+@media (max-width:900px){
+
+  .pricing-layout{
+    grid-template-columns:1fr;
+  }
+}
+
 @media (max-width: 992px) {
 
   .events-grid {
