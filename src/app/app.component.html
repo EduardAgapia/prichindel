@@ -59,7 +59,8 @@
             width="22"
             height="22"
             fill="currentColor">
-            <path d="M448 209.9a210.1 210.1 0 0 1-122.8-39.3v178.7A163.8 163.8 0 1 1 185 188.3v89.2a74.6 74.6 0 1 0 52.2 71.2V0h88a121.2 121.2 0 0 0 1.9 22.2A122.2 122.2 0 0 0 448 142.4z"/>
+            <path
+              d="M448 209.9a210.1 210.1 0 0 1-122.8-39.3v178.7A163.8 163.8 0 1 1 185 188.3v89.2a74.6 74.6 0 1 0 52.2 71.2V0h88a121.2 121.2 0 0 0 1.9 22.2A122.2 122.2 0 0 0 448 142.4z"/>
           </svg>
         </a>
       </div>
@@ -564,9 +565,7 @@
   </div>
 </section>
 
-<section
-  id="galerie"
-  class="section">
+<section id="galerie" class="section">
   <div class="container">
     <div class="section-title">
       <span>O zi la Prichindel Club</span>
@@ -574,15 +573,30 @@
     </div>
 
     <div class="gallery-grid">
-
-      <div class="gallery-item"></div>
-      <div class="gallery-item"></div>
-      <div class="gallery-item"></div>
-      <div class="gallery-item"></div>
-      <div class="gallery-item"></div>
-      <div class="gallery-item"></div>
-      <div class="gallery-item"></div>
-      <div class="gallery-item"></div>
+      <div class="gallery-item">
+        <img src="poza1.jpeg" alt="Prichindel Club - Galerie 1">
+      </div>
+      <div class="gallery-item">
+        <img src="poza2.jpeg" alt="Prichindel Club - Galerie 2">
+      </div>
+      <div class="gallery-item">
+        <img src="poza3.jpeg" alt="Prichindel Club - Galerie 3">
+      </div>
+      <div class="gallery-item">
+        <img src="poza4.jpeg" alt="Prichindel Club - Galerie 4">
+      </div>
+      <div class="gallery-item">
+        <img src="poza5.jpeg" alt="Prichindel Club - Galerie 5">
+      </div>
+      <div class="gallery-item">
+        <img src="poza6.jpeg" alt="Prichindel Club - Galerie 6">
+      </div>
+      <div class="gallery-item">
+        <img src="poza7.jpeg" alt="Prichindel Club - Galerie 7">
+      </div>
+      <div class="gallery-item">
+        <img src="poza8.jpeg" alt="Prichindel Club - Galerie 8">
+      </div>
     </div>
   </div>
 </section>
@@ -598,76 +612,92 @@
       </p>
     </div>
 
-    <div class="pricing-layout">
-      <div class="pricing-benefits">
+    <div class="pricing-programs">
+      <div class="program-card featured">
         <div class="pricing-header">
-          <lucide-icon [img]="BadgeCheck"></lucide-icon>
-          <h3>Ce este inclus</h3>
-
+          <lucide-icon [img]="Sun"></lucide-icon>
+          <h3>Beforeschool</h3>
         </div>
+
+        <p class="program-time">
+          07:00 – 11:30
+        </p>
+
+        <ul>
+          <li>Mic dejun</li>
+          <li>Gustare</li>
+          <li>Pregătire pentru școală</li>
+          <li>Activități educative</li>
+          <li>Transport către școală</li>
+        </ul>
+
+        <div class="price-box">
+          <span>de la</span>
+          <strong>80 lei / zi</strong>
+        </div>
+      </div>
+
+      <div class="program-card featured">
+
+        <div class="pricing-header">
+          <lucide-icon [img]="GraduationCap"></lucide-icon>
+          <h3>Afterschool</h3>
+        </div>
+        <p class="program-time">11:30 – 17:00</p>
+
         <ul>
           <li>Transport de la școală</li>
-          <li>Masă de prânz și gustare</li>
+          <li>Masa de prânz</li>
+          <li>Gustare</li>
           <li>Ajutor la teme</li>
-          <li>Activități educative și recreative</li>
-          <li>Supraveghere permanentă</li>
-          <li>Comunicare constantă cu părinții</li>
+          <li>Activități recreative</li>
         </ul>
-      </div>
 
-      <div class="pricing-table">
-        <div class="pricing-header">
-          <lucide-icon [img]="Wallet"></lucide-icon>
-          <h3>Tarife</h3>
-
-        </div>
-        <div class="price-row">
-          <div>
-            <h4>Participare zilnică</h4>
-            <span>Ideal pentru participare ocazională</span>
-          </div>
+        <div class="price-box">
+          <span>de la</span>
           <strong>90 lei / zi</strong>
         </div>
-
-        <div class="price-row">
-          <div>
-            <h4>Abonament săptămânal</h4>
-            <span>5 zile consecutive</span>
-          </div>
-          <strong>
-            400 lei
-            <small>(80 lei / zi)</small>
-          </strong>
-        </div>
-
-        <div class="price-row">
-          <div>
-            <h4>Abonament lunar</h4>
-            <span>4 săptămâni consecutive</span>
-          </div>
-          <strong>
-            1500 lei
-            <small>(75 lei / zi)</small>
-          </strong>
-        </div>
       </div>
     </div>
 
-    <div class="enroll-box">
-      <h3>Înscrieri deschise</h3>
+    <div class="pricing-benefits-full">
+
+      <div class="pricing-header">
+        <lucide-icon [img]="BadgeCheck"></lucide-icon>
+        <h3>Ce oferă Prichindel Club</h3>
+      </div>
+
+      <div class="benefits-grid">
+        <div>✔ Grupe restrânse</div>
+        <div>✔ Personal calificat</div>
+        <div>✔ Activități educative</div>
+        <div>✔ Activități recreative</div>
+        <div>✔ Comunicare cu părinții</div>
+        <div>✔ Mediu sigur și prietenos</div>
+      </div>
+    </div>
+
+    <div class="documents-box">
+      <h3>Programe și tarife</h3>
       <p>
-        Locurile sunt limitate. Completează formularul de înscriere și
-        te vom contacta pentru confirmarea disponibilității.
+        Descarcă programele complete și lista tarifelor.
       </p>
 
-      <a
-        href="#contact"
-        class="btn-primary">
+      <div class="documents-buttons">
+        <a href="/before.jpeg" target="_blank" download class="btn-primary">
+          Program Beforeschool
+        </a>
 
-        Completează formularul
-      </a>
+        <a href="/after.jpeg" target="_blank" download class="btn-primary">
+          Program Afterschool
+        </a>
 
+        <a href="/servicii-tarife.jpeg" target="_blank" download class="btn-primary">
+          Servicii și Tarife
+        </a>
+      </div>
     </div>
+
   </div>
 </section>
 
