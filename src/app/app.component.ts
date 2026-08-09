@@ -27,6 +27,7 @@ import {
   BadgeCheck,
   Facebook,
   Instagram,
+  MessageCircleMore,
   Wallet
 } from 'lucide-angular';
 
@@ -70,6 +71,7 @@ export class AppComponent {
   readonly Wallet = Wallet;
   readonly Facebook = Facebook;
   readonly Instagram = Instagram;
+  readonly MessageCircleMore = MessageCircleMore;
 
   menuOpen = false;
   currentYear = new Date().getFullYear();

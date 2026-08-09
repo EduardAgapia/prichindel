@@ -8,7 +8,9 @@
 
       <div class="logo-text">
         <h2>Prichindel Club</h2>
-        <span>Afterschool • Lunca Cetățuii</span>
+        <span>• Afterschool •</span>
+        <br>
+        <span>Str. Luceafărului nr 134, Lunca Cetatuii, comuna Ciurea, jud. Iași</span>
       </div>
     </a>
     <button
@@ -24,7 +26,7 @@
       <a href="#pret" (click)="closeMenu()">Preturi</a>
       <a href="#program" (click)="closeMenu()">Program</a>
       <a href="#galerie" (click)="closeMenu()">Galerie</a>
-      <a href="#contact" (click)="closeMenu()">Contact</a>
+<!--      <a href="#contact" (click)="closeMenu()">Contact</a>-->
     </nav>
   </div>
 </header>
@@ -611,7 +613,15 @@
       </p>
     </div>
 
-    <div class="section-title"><h2 style="color: #30b46b;">After school</h2></div>
+    <div class="section-title">
+      <h2 style="color: #30b46b;">After school</h2>
+      <a
+        href="https://forms.gle/rF2EPD2kk6YiaWJ49"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary">
+        Completează formularul de înscriere
+      </a>    </div>
 
     <div class="pricing-layout">
       <div class="pricing-benefits">
@@ -645,7 +655,17 @@
     </div>
     <br>
 
-    <div class="section-title"><h2 style="color: #30b46b;">Before school</h2></div>
+    <div class="section-title">
+      <h2 style="color: #30b46b;">Before school</h2>
+      <a
+        href="https://forms.gle/KBRutoEqtTsfaeNF7"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary">
+        Completează formularul de înscriere
+      </a>
+    </div>
+
     <div class="pricing-layout">
       <div class="pricing-benefits">
         <div class="pricing-header">
@@ -908,57 +928,63 @@
         pentru a afla calendarul următoarelor evenimente.
       </p>
 
-      <a href="#contact" class="btn-primary">
-        Cere mai multe informații
+      <a
+        href="https://wa.me/40734365761?text=Bună!%20Aș%20dori%20informații%20despre%20programele%20Prichindel%20Club%20și%20disponibilitatea%20locurilor."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary whatsapp-btn">
+        <lucide-icon [img]="MessageCircleMore"></lucide-icon>
+        <span>Cere mai multe informații</span>
       </a>
     </div>
   </div>
 </section>
 
-<section
-  id="contact"
-  class="section contact">
-  <div class="container contact-grid">
-    <div>
-      <div class="section-title">
-        <span>CONTACT</span>
-        <h2>
-          Te așteptăm în vizită
-        </h2>
-      </div>
+<!--<section-->
+<!--  id="contact"-->
+<!--  class="section contact">-->
+<!--  <div class="container contact-grid">-->
+<!--    <div>-->
+<!--      <div class="section-title">-->
+<!--        <span>CONTACT</span>-->
+<!--        <h2>-->
+<!--          Te așteptăm în vizită-->
+<!--        </h2>-->
+<!--      </div>-->
 
-      <p>
-        Programează o vizită și vino
-        să vezi spațiul nostru.
-      </p>
-      <ul class="contact-list">
-        <li>📍 Str. Luceafărului nr 134, Lunca Cetatuii, comuna Ciurea, jud. Iași</li>
-        <li>📞 +40 734 365 761</li>
-        <li>prichindel.club&#64;yahoo.com</li>
-      </ul>
-    </div>
+<!--      <p>-->
+<!--        Programează o vizită și vino-->
+<!--        să vezi spațiul nostru.-->
+<!--      </p>-->
+<!--      <ul class="contact-list">-->
+<!--        <li>📍 Str. Luceafărului nr 134, Lunca Cetatuii, comuna Ciurea, jud. Iași</li>-->
+<!--        <li>📞 +40 734 365 761</li>-->
+<!--        <li>prichindel.club&#64;yahoo.com</li>-->
+<!--      </ul>-->
+<!--    </div>-->
 
-    <div class="contact-card">
-      <input
-        type="text"
-        placeholder="Nume">
-      <input
-        type="email"
-        placeholder="Email">
-      <input
-        type="tel"
-        placeholder="Telefon">
-      <textarea
-        rows="5"
-        placeholder="Mesaj">
-</textarea>
-      <button
-        class="btn-primary">
-        Trimite mesajul
-      </button>
-    </div>
-  </div>
-</section>
+<!--    <div class="contact-card">-->
+<!--      <input-->
+<!--        type="text"-->
+<!--        placeholder="Nume">-->
+<!--      <input-->
+<!--        type="email"-->
+<!--        placeholder="Email">-->
+<!--      <input-->
+<!--        type="tel"-->
+<!--        placeholder="Telefon">-->
+<!--      <textarea-->
+<!--        rows="5"-->
+<!--        placeholder="Mesaj">-->
+<!--</textarea>-->
+<!--      <button-->
+<!--        class="btn-primary">-->
+<!--        Trimite mesajul-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
 <footer>
   <div class="container footer-content">
     <div>
@@ -978,7 +1004,7 @@
       <a (click)="scrollTo('despre')">Despre</a>
       <a (click)="scrollTo('program')">Program</a>
       <a (click)="scrollTo('galerie')">Galerie</a>
-      <a (click)="scrollTo('contact')">Contact</a>
+<!--      <a (click)="scrollTo('contact')">Contact</a>-->
     </div>
     <div>
       <h4>
@@ -994,3 +1020,15 @@
     Toate drepturile rezervate.
   </div>
 </footer>
+
+<a
+  href="https://wa.me/40734365761?text=Bună!%20Aș%20dori%20informații%20despre%20programele%20Prichindel%20Club%20și%20disponibilitatea%20locurilor."
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp-floating">
+
+  <lucide-icon [img]="MessageCircleMore"></lucide-icon>
+
+  <span>Scrie-ne pe WhatsApp</span>
+
+</a>
