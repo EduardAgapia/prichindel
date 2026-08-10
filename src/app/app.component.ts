@@ -28,7 +28,8 @@ import {
   Facebook,
   Instagram,
   MessageCircleMore,
-  Wallet
+  Wallet,
+  Flag
 } from 'lucide-angular';
 
 @Component({
@@ -72,6 +73,7 @@ export class AppComponent {
   readonly Facebook = Facebook;
   readonly Instagram = Instagram;
   readonly MessageCircleMore = MessageCircleMore;
+  readonly Flag = Flag;
 
   menuOpen = false;
   currentYear = new Date().getFullYear();
