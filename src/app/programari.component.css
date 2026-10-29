@@ -1,0 +1,36 @@
+ + <script> într-o pagină existentă.
+  DE COMPLETAT: PUBLIC_SHEET_ID (îl afișează scriptul la setup()).
+-->
+<style>
+  :host{display:block;min-height:100vh;margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#fff;color:#222}
+  #pc-cal{max-width:620px;margin:24px auto;padding:0 16px;
+    --g:#2e9e5b;--y:#e8a317;--r:#d64545;--x:#d5d8dc;--i:#9ccbb0}
+  #pc-cal h2{text-align:center;margin:0 0 4px}
+  #pc-cal .pc-sub{text-align:center;color:#666;margin:0 0 18px;font-size:.95em}
+  #pc-cal .pc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+  #pc-cal .pc-head h3{margin:0;font-size:1.25em;text-transform:capitalize}
+  #pc-cal .pc-head button{border:0;background:#f1f2f4;border-radius:50%;width:42px;height:42px;font-size:24px;cursor:pointer;line-height:1}
+  #pc-cal .pc-head button:disabled{opacity:.25;cursor:default}
+  #pc-cal .pc-grid{display:grid;grid-template-columns:repeat(5,1fr) repeat(2,.55fr);gap:6px}
+  #pc-cal .pc-dow span{text-align:center;font-weight:600;font-size:.85em;color:#666}
+  #pc-cal .pc-day{aspect-ratio:1;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-weight:700;font-size:1em;background:#f6f7f8;color:#b5b9be;border:2px solid transparent;padding:0;font-family:inherit}
+  #pc-cal .pc-day small{font-size:.62em;font-weight:500;margin-top:2px;line-height:1.1;text-align:center}
+  #pc-cal .pc-day.we{aspect-ratio:auto;background:transparent;color:#ccc}
+  #pc-cal .pc-day.liber{background:var(--g);color:#fff;cursor:pointer}
+  #pc-cal .pc-day.putine{background:var(--y);color:#fff;cursor:pointer}
+  #pc-cal .pc-day.complet{background:var(--r);color:#fff}
+  #pc-cal .pc-day.inchis{background:var(--x);color:#fff}
+  #pc-cal .pc-day.info{background:var(--i);color:#fff}
+  #pc-cal .pc-day.azi{border-color:#222}
+  #pc-cal .pc-day.liber:hover,#pc-cal .pc-day.putine:hover{transform:scale(1.06);border-color:#000}
+  #pc-cal .pc-empty{background:transparent}
+  #pc-cal .pc-legend{display:flex;flex-wrap:wrap;gap:10px 16px;margin-top:16px;font-size:.85em}
+  #pc-cal .pc-legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
+  #pc-cal .pc-info{margin-top:14px;padding:12px 14px;background:#f6f7f8;border-radius:10px;font-size:.95em}
+  #pc-cal .pc-btn{display:block;text-align:center;margin-top:14px;padding:14px;border-radius:10px;background:var(--g);color:#fff;
+    font-weight:700;text-decoration:none}
+  #pc-cal .pc-btn.off{background:#bbb;pointer-events:none}
+  @media(max-width:440px){#pc-cal .pc-day small{font-size:.55em} #pc-cal .pc-day small .lbl{display:none}}
+
+.pc-back{display:block;max-width:620px;margin:24px auto;padding:0 16px;color:#2e9e5b} button:focus-visible,a:focus-visible{outline:3px solid #222;outline-offset:3px}

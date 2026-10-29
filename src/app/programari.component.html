@@ -1,0 +1,32 @@
+<a class="pc-back" routerLink="/">← Înapoi la Prichindel Club</a>
+<div id="pc-cal">
+  <h2>Locuri disponibile la afterschool</h2>
+  <p class="pc-sub">Maxim 30 de copii pe zi · înscrierea pentru săptămâna următoare se închide duminică la 15:00</p>
+  <div class="pc-head">
+    <button type="button" aria-label="Luna anterioară" [disabled]="month <= startMonth" (click)="changeMonth(-1)">‹</button>
+    <h3>{{ title }}</h3>
+    <button type="button" aria-label="Luna următoare" [disabled]="month >= startMonth + 2" (click)="changeMonth(1)">›</button>
+  </div>
+  <div class="pc-grid pc-dow"><span>Lu</span><span>Ma</span><span>Mi</span><span>Jo</span><span>Vi</span><span>Sâ</span><span>Du</span></div>
+  <p *ngIf="loading" role="status">Se încarcă disponibilitatea…</p>
+  <div class="pc-grid" [attr.aria-busy]="loading">
+    <ng-container *ngFor="let day of days">
+      <div *ngIf="!day.number" class="pc-day pc-empty"></div>
+      <button *ngIf="day.number" type="button" class="pc-day" [ngClass]="day.state" [class.azi]="day.today"
+        [disabled]="!day.selectable || error" [attr.aria-pressed]="selected === day.key"
+        [attr.aria-label]="day.number + ' ' + title + ': ' + (day.label || 'indisponibil')" (click)="choose(day.key)">
+        {{ day.number }}<small *ngIf="day.label">{{ day.label }}</small>
+      </button>
+    </ng-container>
+  </div>
+  <div class="pc-legend">
+    <span><i style="background:var(--g)"></i>Locuri libere – înscriere deschisă</span>
+    <span><i style="background:var(--y)"></i>Ultimele locuri</span>
+    <span><i style="background:var(--i)"></i>Locuri libere – înscrierea nu e deschisă încă / termen depășit</span>
+    <span><i style="background:var(--r)"></i>Complet</span>
+    <span><i style="background:var(--x)"></i>Închis</span>
+  </div>
+  <div class="pc-info" aria-live="polite">{{ message }}</div>
+  <button *ngIf="error" type="button" (click)="refresh()">Reîncearcă</button>
+  <a class="pc-btn" [class.off]="!canRegister" [attr.href]="canRegister ? form : null" [attr.aria-disabled]="!canRegister" [attr.tabindex]="canRegister ? 0 : -1" target="_blank" rel="noopener noreferrer">Completează formularul de prezență</a>
+</div>
