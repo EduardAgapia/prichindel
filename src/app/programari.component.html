@@ -1,14 +1,24 @@
-<a class="pc-back" routerLink="/">← Înapoi la Prichindel Club</a>
+<header class="page-header">
+  <a class="brand" routerLink="/"><img src="logo.jpeg" alt=""><span>Prichindel Club<small>Învățăm. Ne jucăm. Creștem.</small></span></a>
+  <a class="pc-back" routerLink="/">← Înapoi la site</a>
+</header>
+<main class="booking-page">
+  <section class="intro">
+    <span class="eyebrow">PROGRAMĂRI AFTERSCHOOL</span>
+    <h1>O zi frumoasă începe<br>cu un loc rezervat.</h1>
+    <p>Alege zilele potrivite pentru familia ta. Noi pregătim temele, joaca și o primire cu zâmbetul pe buze.</p>
+  </section>
+  <div class="booking-layout">
 <div id="pc-cal">
-  <h2>Locuri disponibile la afterschool</h2>
-  <p class="pc-sub">Maxim 30 de copii pe zi · înscrierea pentru săptămâna următoare se închide duminică la 15:00</p>
+  <div class="calendar-heading"><div><span class="eyebrow">ALEGE O ZI</span><h2>Calendarul locurilor</h2></div><span class="capacity">30 de locuri / zi</span></div>
+  <p class="pc-sub">Disponibilitatea pentru luna curentă și următoarele două luni.</p>
   <div class="pc-head">
     <button type="button" aria-label="Luna anterioară" [disabled]="month <= startMonth" (click)="changeMonth(-1)">‹</button>
     <h3>{{ title }}</h3>
     <button type="button" aria-label="Luna următoare" [disabled]="month >= startMonth + 2" (click)="changeMonth(1)">›</button>
   </div>
   <div class="pc-grid pc-dow"><span>Lu</span><span>Ma</span><span>Mi</span><span>Jo</span><span>Vi</span><span>Sâ</span><span>Du</span></div>
-  <p *ngIf="loading" role="status">Se încarcă disponibilitatea…</p>
+  <p *ngIf="loading" class="loading" role="status">Se încarcă disponibilitatea…</p>
   <div class="pc-grid" [attr.aria-busy]="loading">
     <ng-container *ngFor="let day of days">
       <div *ngIf="!day.number" class="pc-day pc-empty"></div>
@@ -26,7 +36,23 @@
     <span><i style="background:var(--r)"></i>Complet</span>
     <span><i style="background:var(--x)"></i>Închis</span>
   </div>
-  <div class="pc-info" aria-live="polite">{{ message }}</div>
-  <button *ngIf="error" type="button" (click)="refresh()">Reîncearcă</button>
-  <a class="pc-btn" [class.off]="!canRegister" [attr.href]="canRegister ? form : null" [attr.aria-disabled]="!canRegister" [attr.tabindex]="canRegister ? 0 : -1" target="_blank" rel="noopener noreferrer">Completează formularul de prezență</a>
 </div>
+<aside class="booking-sidebar">
+  <section class="steps-card">
+    <span class="eyebrow">SIMPLU, ÎN TREI PAȘI</span>
+    <h2>Ne vedem la club!</h2>
+    <ol><li><span>01</span><div><strong>Verifică disponibilitatea</strong><p>Alege o zi verde sau galbenă din calendar.</p></div></li>
+    <li><span>02</span><div><strong>Completează formularul</strong><p>Bifează toate zilele în care copilul tău va fi alături de noi.</p></div></li>
+    <li><span>03</span><div><strong>Pregătește ghiozdanul</strong><p>Te așteptăm cu învățare, prieteni și voie bună.</p></div></li></ol>
+    <div class="deadline"><strong>Duminică, ora 15:00</strong><p>Atunci se închid înscrierile pentru săptămâna următoare.</p></div>
+  </section>
+  <section class="selection-card">
+  <span class="eyebrow">ZIUA ALEASĂ</span>
+  <div class="pc-info" aria-live="polite">{{ message }}</div>
+  <button *ngIf="error" class="retry" type="button" (click)="refresh()">Reîncearcă</button>
+  <a class="pc-btn" [class.off]="!canRegister" [attr.href]="canRegister ? form : null" [attr.aria-disabled]="!canRegister" [attr.tabindex]="canRegister ? 0 : -1" target="_blank" rel="noopener noreferrer">Completează formularul de prezență</a>
+</section>
+</aside>
+</div>
+<footer class="page-footer">Cu grijă pentru cei mici, la Prichindel Club.<span>Lunca Cetățuii · Iași</span></footer>
+</main>

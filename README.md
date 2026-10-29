@@ -14,6 +14,24 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Hosting and direct links
+
+Deploy the contents of `dist/prichindel-club/browser/`, including hidden files.
+`public/.htaccess` supplies the Angular route fallback for Apache hosting with
+`mod_rewrite` and `.htaccess` overrides enabled. Check that `.htaccess` is present
+beside the deployed `index.html` so direct visits and refreshes at `/programari`
+load Angular instead of returning a server 404.
+
+For Nginx hosting, configure the equivalent fallback in the server's site config:
+
+```nginx
+location / {
+    try_files $uri $uri/ /index.html;
+}
+```
+
+After deployment, verify both `/` and a direct visit or refresh at `/programari`.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
