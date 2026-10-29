@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, DestroyRef, OnInit, inject } from '@angular/core';
-import { HttpClient, HttpClientJsonpModule } from '@angular/common/http';
+import { Component, DestroyRef, NgZone, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { timeout } from 'rxjs';
+import { Observable, timeout } from 'rxjs';
 
 interface Availability { cap: number; occupied: number; free: number; open: boolean }
 interface SheetResponse { status: string; table?: { rows: { c: ({ v: unknown } | null)[] }[] } }
@@ -11,11 +10,11 @@ interface CalendarDay { number: number; key: number; state: string; label: strin
 
 @Component({
   selector: 'app-programari', standalone: true,
-  imports: [CommonModule, RouterLink, HttpClientJsonpModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './programari.component.html', styleUrl: './programari.component.css'
 })
 export class ProgramariComponent implements OnInit {
-  private readonly http = inject(HttpClient);
+  private readonly zone = inject(NgZone);
   private readonly destroyRef = inject(DestroyRef);
   readonly form = 'https://docs.google.com/forms/d/e/1FAIpQLSepd29Vd1z4GTLbMR9VjFPQ5P8LeX1tsZ6SoANqolStlM2jXA/viewform';
   private readonly sheet = '1io2iewZkXjqZNvQOu3FL8GU5a6TB9j0oPzPhtch_R-0';
@@ -56,7 +55,7 @@ export class ProgramariComponent implements OnInit {
   refresh(): void {
     if (this.requesting) return;
     this.requesting = true;
-    this.http.jsonp<SheetResponse>(`https://docs.google.com/spreadsheets/d/${this.sheet}/gviz/tq?sheet=public&tqx=responseHandler:JSONP_CALLBACK&t=${Date.now()}`, 'callback')
+    this.loadSheet()
       .pipe(timeout(15000), takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: response => {
@@ -69,6 +68,7 @@ export class ProgramariComponent implements OnInit {
               data[v[0]] = { cap: v[1], occupied: v[2], free: v[3], open: v[4] === 1 };
             }
           }
+          if (!Object.keys(data).length) { this.failed(); return; }
           this.availability = data;
           this.loading = false;
           this.error = false;
@@ -79,6 +79,28 @@ export class ProgramariComponent implements OnInit {
         },
         error: () => { this.requesting = false; this.failed(); }
       });
+  }
+
+  private loadSheet(): Observable<SheetResponse> {
+    // Google expects tqx=responseHandler:NAME; Angular's JSONP client only
+    // replaces =JSONP_CALLBACK, so its callback cannot be used in this format.
+    return new Observable(observer => {
+      const callback = `pcCalendar_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+      const callbacks = window as unknown as Record<string, unknown>;
+      const script = document.createElement('script');
+      callbacks[callback] = (response: SheetResponse) => this.zone.run(() => {
+        observer.next(response);
+        observer.complete();
+      });
+      script.onerror = () => this.zone.run(() => observer.error(new Error('Calendar unavailable')));
+      script.src = `https://docs.google.com/spreadsheets/d/${this.sheet}/gviz/tq?sheet=public&tqx=responseHandler:${callback}&t=${Date.now()}`;
+      document.head.appendChild(script);
+      return () => {
+        script.remove();
+        script.onerror = null;
+        delete callbacks[callback];
+      };
+    });
   }
 
   private failed(): void {
@@ -102,7 +124,7 @@ export class ProgramariComponent implements OnInit {
       const key = year * 10000 + (month + 1) * 100 + number;
       const dow = new Date(year, month, number).getDay();
       const z = this.availability[key];
-      let state = '', label = '', selectable = false;
+      let state = '', label = '', selectable = key >= this.todayKey;
       if (dow === 0 || dow === 6) state = 'we';
       else if (key >= this.todayKey && z) {
         if (z.cap === 0) { state = 'inchis'; label = 'închis'; }
@@ -116,8 +138,13 @@ export class ProgramariComponent implements OnInit {
   choose(key: number): void {
     this.selected = key;
     const z = this.availability[key];
-    this.canRegister = !this.error && key >= this.todayKey && !!z?.open && z.cap > 0 && z.free > 0;
+    const dow = new Date(Math.floor(key / 10000), Math.floor(key / 100) % 100 - 1, key % 100).getDay();
+    this.canRegister = !this.error && dow !== 0 && dow !== 6 && key >= this.todayKey && !!z?.open && z.cap > 0 && z.free > 0;
     const date = `${String(key % 100).padStart(2, '0')}.${String(Math.floor(key / 100) % 100).padStart(2, '0')}.${Math.floor(key / 10000)}`;
+    if (this.error || this.loading || !z) {
+      this.message = `${date}: disponibilitatea ${this.loading ? 'se încarcă' : 'nu este disponibilă momentan'}.`;
+      return;
+    }
     this.message = this.canRegister
       ? `${date}: mai sunt ${z.free} locuri din ${z.cap}. În formular bifează ziua respectivă (și oricare alte zile de care ai nevoie).`
       : `${date}: ${z?.free ?? 0} locuri libere. Înscrierea online pentru această zi nu este disponibilă acum (termen depășit, zi completă sau prea departe în viitor).`;

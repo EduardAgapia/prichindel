@@ -11,7 +11,8 @@
   <div class="booking-layout">
 <div id="pc-cal">
   <div class="calendar-heading"><div><span class="eyebrow">ALEGE O ZI</span><h2>Calendarul locurilor</h2></div><span class="capacity">30 de locuri / zi</span></div>
-  <p class="pc-sub">Disponibilitatea pentru luna curentă și următoarele două luni.</p>
+  <p class="pc-sub">Disponibilitatea pentru luna curentă și următoarele două luni. Conturul indică ziua de azi.</p>
+  <p *ngIf="error" class="loading" role="alert">Disponibilitatea nu a putut fi încărcată. Reîncearcă folosind butonul de mai jos.</p>
   <div class="pc-head">
     <button type="button" aria-label="Luna anterioară" [disabled]="month <= startMonth" (click)="changeMonth(-1)">‹</button>
     <h3>{{ title }}</h3>
@@ -23,7 +24,7 @@
     <ng-container *ngFor="let day of days">
       <div *ngIf="!day.number" class="pc-day pc-empty"></div>
       <button *ngIf="day.number" type="button" class="pc-day" [ngClass]="day.state" [class.azi]="day.today"
-        [disabled]="!day.selectable || error" [attr.aria-pressed]="selected === day.key"
+        [disabled]="!day.selectable" [attr.aria-pressed]="selected === day.key" [attr.aria-current]="day.today ? 'date' : null"
         [attr.aria-label]="day.number + ' ' + title + ': ' + (day.label || 'indisponibil')" (click)="choose(day.key)">
         {{ day.number }}<small *ngIf="day.label">{{ day.label }}</small>
       </button>
